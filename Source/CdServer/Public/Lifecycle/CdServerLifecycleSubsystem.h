@@ -1,9 +1,8 @@
 ﻿#pragma once
 
-#include "CoreMinimal.h"
+#include "CdCoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "Config/CdServerConfig.h"
-#include "Types/CdResult.h"
 #include "CdServerLifecycleSubsystem.generated.h"
 
 /**

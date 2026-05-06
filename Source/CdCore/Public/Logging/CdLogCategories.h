@@ -7,6 +7,6 @@
 CDCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogCd, Log, All)
 CDCORE_API DECLARE_LOG_CATEGORY_EXTERN(LogCdServer, Log, All)
 
-// Core only categories
 
+// Core only categories
 DECLARE_LOG_CATEGORY_EXTERN(LogCdCore, Log, All)

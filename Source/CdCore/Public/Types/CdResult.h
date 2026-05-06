@@ -14,32 +14,35 @@
 UENUM(BlueprintType)
 enum class ECdResultCode : uint8
 {
-	/** Operation completed successfully */
+	/* Operation completed successfully */
 	Success,
 
-	/** Generic failure */
+	/* Generic failure */
 	Failed,
 
-	/** Input validation failed */
+	/* Input validation failed */
 	InvalidInput,
 
-	/** Requested resource was not found */
+	/* Requested resource was not found */
 	NotFound,
 
 	/** Authorization failed */
 	Unauthorized,
 
-	/** Operation timed out */
+	/* Operation timed out */
 	Timeout,
 
-	/** Network-level failure */
+	/* Network-level failure */
 	NetworkError,
 
-	/** Backend service returned an error */
+	/* Backend service returned an error */
 	BackendError,
 
-	/** Internal system error */
-	InternalError
+	/* Internal system error */
+	InternalError,
+
+	/* Missing dependency */
+	MissingDependency
 };
 
 /**
@@ -98,10 +101,10 @@ struct FCdResult
 	}
 
 	/**
-	 * @brief Creates a failed result.
+	 * @brief Creates a failed result with a message.
 	 *
 	 * @param InCode Specific failure code.
-	 * @param InMessage Optional descriptive message.
+	 * @param InMessage Descriptive message.
 	 * @return FCdResult representing failure.
 	 *
 	 * @warning Do not pass ECdResultCode::Success to this function.
@@ -112,6 +115,29 @@ struct FCdResult
 		Result.bSuccess = false;
 		Result.Code = InCode;
 		Result.Message = InMessage;
+		return Result;
+	}
+
+	/**
+	 * @brief Creates a failed result without a message.
+	 *
+	 * @param InCode Specific failure code.
+	 * @return FCdResult representing failure.
+	 *
+	 * @warning Do not pass ECdResultCode::Success to this function.
+	 * @warning Created for overload purposes. Will throw a warning message when used. 
+	 *
+	 * @code
+	 * // Use this for most cases.
+	 * FCdResult Failed(const ECdResultCode InCode, const FString& InMessage)
+	 * @endcode
+	 */
+	 [[deprecated("FCdResult::Failed(const ECdResultCode InCode) called. Use FCdResult::Failed(const ECdResultCode, const FString& InMessage)")]]
+	 static FCdResult Failed(const ECdResultCode InCode)
+	{
+		FCdResult Result;
+		Result.bSuccess = false;
+		Result.Code = InCode;
 		return Result;
 	}
 };

@@ -19,7 +19,6 @@ void ACdGameModeBase::BeginPlay()
 void ACdGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	Super::EndPlay(EndPlayReason);
-
 }
 
 void ACdGameModeBase::Tick(float DeltaTime)

@@ -21,13 +21,13 @@ struct FCdServerConfig
 	/**
 	 * @brief IP address the server is bound to.
 	 */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Server")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "CD|Server")
 	FString IpAddress = TEXT("127.0.0.1");
 
 	/**
 	 * @brief Port the server is listening on.
 	 */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Server")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="CD|Server")
 	FString Port = TEXT("7777");
 
 	/**
@@ -35,7 +35,7 @@ struct FCdServerConfig
 	 * 
 	 * @note Replace later with FCdGuid
 	 */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Server")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="CD|Server")
 	FCdGuid ServerId = FCdGuid::New();
 	
 	/**

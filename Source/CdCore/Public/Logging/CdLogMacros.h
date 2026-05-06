@@ -80,6 +80,26 @@
 #define CD_LOG_FATAL(Category, Format, ...) \
 	CD_LOG(Category, Fatal, Format, ##__VA_ARGS__)
 
+/**
+ * @def CD_LOG_ONCE
+ * @brief Logs an informational message once.
+ *
+ * Intended for general runtime checks on items that call multiple times, such as Tick().
+ *
+ * @param Category Log category
+ * @param Format   printf-style format string
+ * @param ...      Additional format arguments
+ */
+#define CD_LOG_ONCE(Category, Verbosity, Format, ...) \
+    { \
+        static bool bHasLogged = false; \
+        if (!bHasLogged) \
+        { \
+            CD_LOG(Category, Verbosity, Format, ##__VA_ARGS__); \
+            bHasLogged = true; \
+        } \
+    }
+
 #pragma endregion Console Logging
 
 #pragma region Screen Logging

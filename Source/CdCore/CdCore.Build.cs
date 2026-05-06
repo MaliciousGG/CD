@@ -10,8 +10,7 @@ public class CdCore : ModuleRules
             new string[]
             {
                 "Core",
-            }
-        );
+            });
 
         PrivateDependencyModuleNames.AddRange(new string[]
         {
