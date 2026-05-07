@@ -45,7 +45,7 @@ bool FCdResultFailedTestI::RunTest(const FString& Parameters)
 	TestTrue(TEXT("Result Code is Failed"), Result.Code == ECdResultCode::Failed);
 
 	// Testing to ensure Result.Message contains a message
-	TestTrue(TEXT(""), !Result.Message.IsEmpty());
+	TestFalse(TEXT("Result Message is NOT empty"), Result.Message.IsEmpty());
 
 	return true;
 }

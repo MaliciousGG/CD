@@ -23,13 +23,9 @@ namespace CdBuild
     /**
      * @brief Returns true if this is a dedicated server build.
      */
-    FORCEINLINE constexpr bool IsServerBuild()
+    FORCEINLINE bool IsServerBuild()
     {
-    #if UE_SERVER
-        return true;
-    #else
-        return false;
-    #endif
+        return IsRunningDedicatedServer();
     }
 
     /**

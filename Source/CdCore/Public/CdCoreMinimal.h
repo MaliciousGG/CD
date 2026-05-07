@@ -4,17 +4,17 @@
 #include "CoreMinimal.h" 
 
 // Assert Includes
-#include "Assert/Assert.h"
+#include "Assert/CdAssert.h"
 
-// Base Inclues
+// Base Includes
 #include "Base/CdGameModeBase.h"
 
 // Build Includes
-#include "Build/Build.h"
+#include "Build/CdBuild.h"
 
 // Logging Includes
-#include "CdLogCategories.h"
-#include "CdLogMacros.h"
+#include "Logging/CdLogCategories.h"
+#include "Logging/CdLogMacros.h"
 
 // Type Includes
 #include "Types/CdIds.h"

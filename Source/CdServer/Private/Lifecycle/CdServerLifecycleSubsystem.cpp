@@ -5,7 +5,7 @@ void UCdServerLifecycleSubsystem::Initialize(FSubsystemCollectionBase& Collectio
 {
 	Super::Initialize(Collection);
 
-	if (IsRunningDedicatedServer())
+	if (CdBuild::IsServerBuild())
 	{
 		StartServer();
 	}
